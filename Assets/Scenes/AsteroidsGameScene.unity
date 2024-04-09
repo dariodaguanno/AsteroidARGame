@@ -169,7 +169,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 20
+  far clip plane: 50
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -639,6 +639,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1979042384}
   - component: {fileID: 1979042383}
+  - component: {fileID: 1979042385}
   m_Layer: 0
   m_Name: AsteroidSpawner
   m_TagString: Untagged
@@ -674,3 +675,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1979042385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979042382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29267f25800cd84bbc1d6af1c19f121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefab: {fileID: 4772881693238296118, guid: 20ef349fbf1bf9f48b73b7bc0872bb6e, type: 3}
+  _collider: {fileID: 1979042383}
+  _spawnDelayTime: 5
+  _gameState: {fileID: 11400000, guid: 53b0d8dd8d382214ba00d35251644bc2, type: 2}
