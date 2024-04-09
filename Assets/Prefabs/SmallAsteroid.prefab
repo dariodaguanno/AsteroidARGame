@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 363787242023490720}
   - component: {fileID: 4597031139628008917}
+  - component: {fileID: -8722631822936194987}
   m_Layer: 0
   m_Name: SmallAsteroid
   m_TagString: Enemy
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetName: Planet
   _randomOffset: {x: 1, y: 1, z: 1}
+--- !u!114 &-8722631822936194987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003326425186345857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92dc3492859217046b88585b1e1e282e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1.1
 --- !u!1001 &5663059745045071092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -116,6 +130,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11f24afd333423043b8fcbaef198ade9, type: 3}
+--- !u!1 &4780099333715720613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11f24afd333423043b8fcbaef198ade9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5663059745045071092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &223908529649197153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4780099333715720613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fff3b719dcf3a8418840e33f83dbe8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: {x: 20, y: 20, z: 20}
+  _randomizeInitialRotation: 1
+  _randomizationFactor: 1
 --- !u!4 &5268511896730116895 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 11f24afd333423043b8fcbaef198ade9,
