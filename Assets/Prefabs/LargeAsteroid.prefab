@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 239889329860057092}
   - component: {fileID: 8126113763593557981}
   - component: {fileID: -762370387827164079}
+  - component: {fileID: 2413365390275936329}
+  - component: {fileID: 4025169050934137414}
   m_Layer: 0
   m_Name: LargeAsteroid
   m_TagString: Enemy
@@ -61,6 +63,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
+--- !u!114 &2413365390275936329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772881693238296118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a2c72d36a524b4f8e3acc0ffeaf99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 0
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4025169050934137414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4772881693238296118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5298f1a9a1c1cfe4c9e60b3b4a8ebf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 60
 --- !u!1001 &1645426307870824772
 PrefabInstance:
   m_ObjectHideFlags: 0

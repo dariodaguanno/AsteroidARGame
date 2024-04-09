@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7808902552942315209}
   - component: {fileID: 3245261526057575775}
   - component: {fileID: 8970076834681651645}
+  - component: {fileID: 4396627011427689304}
+  - component: {fileID: 1281403769565439797}
   m_Layer: 0
   m_Name: MediumAsteroid
   m_TagString: Enemy
@@ -61,6 +63,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+--- !u!114 &4396627011427689304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139026854648515731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a2c72d36a524b4f8e3acc0ffeaf99f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 0
+  OnDestroy:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1281403769565439797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 139026854648515731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5298f1a9a1c1cfe4c9e60b3b4a8ebf68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyDelay: 60
 --- !u!1001 &6315965562114168762
 PrefabInstance:
   m_ObjectHideFlags: 0
