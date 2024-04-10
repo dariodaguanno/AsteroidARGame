@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 1875584139}
   - component: {fileID: 1875584138}
   - component: {fileID: 1875584137}
+  - component: {fileID: 1875584141}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -679,7 +680,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnShoot:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1875584141}
+        m_TargetAssemblyTypeName: CreateObject, Assembly-CSharp
+        m_MethodName: CreateNewObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   fireRate: 0.3
 --- !u!65 &1875584138
 BoxCollider:
@@ -744,6 +757,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1875584135}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1875584141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875584135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7322b12e5c7974a4d9c078b19d8b5f0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToCreate: {fileID: 3555074871148136522, guid: 8d56628407c6b604988f5ccaa1d1b77b,
+    type: 3}
+  useSpawnPoint: 0
+  chance: 1
+  referenceObjectRotation: {fileID: 1875584136}
+  amountOfObjects: 1
+  randomizeInitialPositon: 0
+  xRandomizationFactor: 1
+  yRandomizationFactor: 1
+  zRandomizationFactor: 1
 --- !u!1 &1979042382
 GameObject:
   m_ObjectHideFlags: 0
