@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1509617812917608580}
   - component: {fileID: 7196516555806272738}
   - component: {fileID: 2996470709324019335}
+  - component: {fileID: 7263779878955830826}
   m_Layer: 0
   m_Name: SmallAsteroid
   m_TagString: Enemy
@@ -82,7 +83,19 @@ MonoBehaviour:
   destroyDelay: 0
   OnDestroy:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: 53b0d8dd8d382214ba00d35251644bc2, type: 2}
+        m_TargetAssemblyTypeName: GameState, Assembly-CSharp
+        m_MethodName: IncreaseScore
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2964951390503340045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +202,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7263779878955830826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003326425186345857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30be6a1e7e400c544a2de3ed2b2d2421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameState: {fileID: 11400000, guid: 53b0d8dd8d382214ba00d35251644bc2, type: 2}
 --- !u!1001 &5663059745045071092
 PrefabInstance:
   m_ObjectHideFlags: 0
