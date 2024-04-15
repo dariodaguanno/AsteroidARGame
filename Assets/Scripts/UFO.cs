@@ -23,14 +23,24 @@ public class UFO : MonoBehaviour
 
     [SerializeField] private UnityEvent OnStopAttacking;
     [SerializeField] private UnityEvent OnStartAttacking;
-
+    [SerializeField] private UnityEvent OnDie;
 
     private Transform player;
     
     public UFOStates CurrentState {
+
         get => currentState; 
         set {
+
             currentState = value;
+
+            if(currentState == UFOStates.Attacking) {
+                OnStartAttacking?.Invoke();
+            }
+
+            else {
+                OnStopAttacking?.Invoke();
+            }
         }
     }
 
@@ -60,7 +70,7 @@ public class UFO : MonoBehaviour
     }
 
     public Vector3 GetNewPositionVector() {
-        //Step 2: Create the attacking state
+
         float randomX = Random.Range(-xyOffset, xyOffset);
         float randomY = Random.Range(-xyOffset, xyOffset);
         float newZ = player.position.z + spawnDistanceFromPlayer;
@@ -73,7 +83,7 @@ public class UFO : MonoBehaviour
 
         Vector3 spawnPosition = GetNewPositionVector();
 
-        transform.position += spawnPosition;
+        transform.position = spawnPosition;
 
         //define new random trajectory vectors
         for (int i = 0; i < trajectoriesPerSpawn; i++) {
@@ -99,5 +109,14 @@ public class UFO : MonoBehaviour
         }
 
         CurrentState = UFOStates.Idle;
+    }
+
+    public void Die() {
+
+        OnDie?.Invoke();
+        OnStopAttacking?.Invoke();
+
+        StopAllCoroutines();
+        StartCooldown();
     }
 }
