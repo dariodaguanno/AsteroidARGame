@@ -20,7 +20,11 @@ public class UFO : MonoBehaviour
     [SerializeField] private int cooldownMinTime = 5;
     [SerializeField] private int cooldownMaxTime = 15;
     [SerializeField] private GameState gameState;
-    
+
+    [SerializeField] private UnityEvent OnStopAttacking;
+    [SerializeField] private UnityEvent OnStartAttacking;
+
+
     private Transform player;
     
     public UFOStates CurrentState {
@@ -41,4 +45,59 @@ public class UFO : MonoBehaviour
         CurrentState = UFOStates.Idle;
     }
 
+    private IEnumerator IdleRoutine() {
+
+        transform.position = new Vector3(1000, 1000, 1000);
+        trajectoryVectors.Clear();
+
+        yield return new WaitForSeconds(Random.Range(cooldownMinTime, cooldownMaxTime));
+
+        CurrentState = UFOStates.Attacking;
+    }
+
+    public void StartCooldown() {
+        StartCoroutine(IdleRoutine());
+    }
+
+    public Vector3 GetNewPositionVector() {
+        //Step 2: Create the attacking state
+        float randomX = Random.Range(-xyOffset, xyOffset);
+        float randomY = Random.Range(-xyOffset, xyOffset);
+        float newZ = player.position.z + spawnDistanceFromPlayer;
+
+        return new Vector3(randomX, randomY, newZ);
+    }
+    public void StartAttacking() {
+
+        if (player == null) return;
+
+        Vector3 spawnPosition = GetNewPositionVector();
+
+        transform.position += spawnPosition;
+
+        //define new random trajectory vectors
+        for (int i = 0; i < trajectoriesPerSpawn; i++) {
+            trajectoryVectors.Add(GetNewPositionVector());
+        }
+
+        StartCoroutine(AttackMovement());
+    }
+
+    IEnumerator AttackMovement() {
+        
+        for (int i = 0; i < trajectoryVectors.Count; i++) {
+
+            float distance = Vector3.Distance(transform.position, trajectoryVectors[i]);
+
+            while(distance > 0.5f && !gameState.GameOver) {
+                yield return null;
+
+                transform.position = Vector3.MoveTowards(transform.position, trajectoryVectors[i], Time.deltaTime * movementSpeed);
+
+                distance = Vector3.Distance(transform.position, trajectoryVectors[i]);
+            }
+        }
+
+        CurrentState = UFOStates.Idle;
+    }
 }
