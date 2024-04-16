@@ -17,6 +17,8 @@ public class Health : MonoBehaviour {
     // Event invoked when the GameObject gains health, providing the updated health value
     [SerializeField] private UnityEvent<int> OnReceiveHealth;
 
+    [SerializeField] private AudioSfx damageAudio;
+
     private void Start() {
         currentHealth = maxHealth;  
     }
@@ -55,5 +57,9 @@ public class Health : MonoBehaviour {
 
         // Invoke the OnReceiveHealth event, passing the updated health value
         OnReceiveHealth?.Invoke(currentHealth);
+    }
+
+    public void playDamageAudio() {
+        damageAudio.PlayAudio(gameObject);
     }
 }
