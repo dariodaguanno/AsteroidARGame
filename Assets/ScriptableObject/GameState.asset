@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3945a3da7887d4042a9b9a51f1386a67, type: 3}
   m_Name: GameState
   m_EditorClassIdentifier: 
-  Score: 0
+  Score: 680
   OnIncreaseScore:
     m_PersistentCalls:
       m_Calls: []
@@ -20,4 +20,4 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   GameSpeed: 1
-  _gameOver: 0
+  _gameOver: 1
