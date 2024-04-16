@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class UFO : MonoBehaviour
@@ -24,6 +25,8 @@ public class UFO : MonoBehaviour
     [SerializeField] private UnityEvent OnStopAttacking;
     [SerializeField] private UnityEvent OnStartAttacking;
     [SerializeField] private UnityEvent OnDie;
+
+    [SerializeField] private AudioSfx ufoOnScene;
 
     private Transform player;
     
@@ -66,6 +69,7 @@ public class UFO : MonoBehaviour
     }
 
     public void StartCooldown() {
+        ufoOnScene.StopAudio();
         StartCoroutine(IdleRoutine());
     }
 
@@ -90,6 +94,8 @@ public class UFO : MonoBehaviour
             trajectoryVectors.Add(GetNewPositionVector());
         }
 
+        ufoOnScene.PlayAudio(gameObject);
+
         StartCoroutine(AttackMovement());
     }
 
@@ -113,6 +119,7 @@ public class UFO : MonoBehaviour
 
     public void Die() {
 
+        ufoOnScene.StopAudio();
         OnDie?.Invoke();
         OnStopAttacking?.Invoke();
 

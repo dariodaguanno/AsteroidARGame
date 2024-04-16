@@ -512,7 +512,19 @@ MonoBehaviour:
   currentHealth: 100
   OnReceiveDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 631794420}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: playDamageAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnZeroHealth:
     m_PersistentCalls:
       m_Calls:
@@ -543,6 +555,7 @@ MonoBehaviour:
   OnReceiveHealth:
     m_PersistentCalls:
       m_Calls: []
+  damageAudio: {fileID: 11400000, guid: f8f1390fcb50c884c8fd7849f19efd0b, type: 2}
 --- !u!114 &631794421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -819,6 +832,7 @@ MonoBehaviour:
   OnReceiveHealth:
     m_PersistentCalls:
       m_Calls: []
+  damageAudio: {fileID: 0}
 --- !u!114 &1089785635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -897,6 +911,7 @@ MonoBehaviour:
   OnDie:
     m_PersistentCalls:
       m_Calls: []
+  ufoOnScene: {fileID: 11400000, guid: bc6a3d637f0079b43911b49bda2bc3a7, type: 2}
 --- !u!114 &1089785636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1242,7 +1257,19 @@ MonoBehaviour:
   currentHealth: 100
   OnReceiveDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1875584142}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: playDamageAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnZeroHealth:
     m_PersistentCalls:
       m_Calls:
@@ -1273,6 +1300,7 @@ MonoBehaviour:
   OnReceiveHealth:
     m_PersistentCalls:
       m_Calls: []
+  damageAudio: {fileID: 11400000, guid: cbec91ebff52eb5439a8b1094d0e6d2a, type: 2}
 --- !u!114 &1875584143
 MonoBehaviour:
   m_ObjectHideFlags: 0
